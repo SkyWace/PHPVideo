@@ -8,9 +8,47 @@
     <--Flavicon-->
     <link rel="iMovie icon" type="image/x-icon" href="../Image/film.png">
     <--CSS-->
-    <link rel="stylesheet" href="Css/Accueil.css">
+    <link rel="stylesheet" href="../Css/Accueil.css">
 </head>
 <body>
-    
+    <button class="scroll-top scroll-to-target" data-target="html">
+        <i class="fas fa-angle-up"></i>
+    </button>
+    <header>
+        <nav>
+            <div class="Logo-site">
+                <a href="Accueil.html">
+                    <img src="iMovie-logo.png" alt="Logo">
+                </a>
+            </div>
+            <div>
+                <ul class="Menu">
+                    <li><a href="Accueil.html">Home</a></li>
+                    <li><a href="Movie.html">Movie</a>
+                        <ul class="sub-menu">
+                            <a href="Movie.html">Movie</a>
+                            <a href="Movie-detail.html">Details</a>
+                        </ul>
+                    </li>
+                    <li><a href="Contatct.html">Contacts</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li class="search"><a href="#"><i class="fas fa-search"></i></a></li>
+                    <li class="header-lang">
+                        <form>
+                            <div class="icon"><i class="flaticon-globe"></i></div>
+                            <select id="lang-dropdown">
+                                <option value="">En</option>
+                                <option value="">Fr</option>
+                            </select>
+                        </form>
+                    </li>
+                    <li class="header-btn"><a href="Login.php" class="btn">Sign In</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 </body>
 </html>
