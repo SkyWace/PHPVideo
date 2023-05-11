@@ -1,4 +1,6 @@
+
 <?php
+require ('../PHP/header.php');
 require_once 'User.php'; // Inclure la classe User
 
 // Instancier la classe User
