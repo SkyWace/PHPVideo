@@ -70,102 +70,67 @@ require ('PHP/ConnexionBDD.php');
             </section>
             <!-- banner-area-end -->
 
-            <!-- up-coming-movie-area -->
-            <section class="ucm-area ucm-bg" data-background="img/bg/ucm_bg.jpg">
-                <div class="ucm-bg-shape" data-background="img/bg/ucm_bg_shape.png"></div>
-                <div class="container">
-                    <div class="row align-items-end mb-55">
-                        <div class="col-lg-6">
-                            <div class="section-title text-center text-lg-left">
-                                <span class="sub-title">ONLINE STREAMING</span>
-                                <h2 class="title">Upcoming Movies</h2>
-                            </div>
-                            <?php
-                            // Requête pour récupérer les films
-                            $query = "SELECT * FROM movies";
-                            $stmt = $pdo->query($query);
-            
-                            // Affichage des films
-                            foreach ($stmt as $row ) {
-                                $title = $row['title'];
-                                $image = $row['image'];
-                                $year = $row['year'];
-                                $duration = $row['duration'];
-                            ?>
-                                <div class="movie-item mb-50">
-                                    <div class="movie-poster">
-                                        <a href="movie-details.html"><img src="img/poster/<?=$image?>" alt=""></a>
-                                    </div>
-                                    <div class="movie-content">
-                                        <div class="top">
-                                            <h5 class="title"><a href="movie-details.html"><?=$title?></a></h5>
-                                                <span class="date"><?=$year?></span>
-                                        </div>
-                                        <div class="bottom">
-                                            <ul>
-                                                <li>
-                                                    <span class="duration"><i class="far fa-clock"></i><?=$duration?>    min</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php
-                            }
-                            ?>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- up-coming-movie-area-end -->
-            
             <!-- services-area -->
-            <section class="services-area services-bg" data-background="img/bg/services_bg.jpg">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div class="services-img-wrap">
-                                <img src="img/images/services_img.jpg" alt="">
-                                <a href="img/images/services_img.jpg" class="download-btn" download>Download <img src="fonts/download.svg" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="services-content-wrap">
-                                <div class="section-title title-style-two mb-20">
-                                    <span class="sub-title">Our Services</span>
-                                    <h2 class="title">Download Your Shows Watch Offline.</h2>
+            <section id="Movie" class="services-area services-bg" data-background="img/bg/services_bg.jpg">
+    <div class="container">
+        <div class="row align-items-center">
+            <?php        
+            // Requête pour récupérer les films
+            $query = "SELECT * FROM movies";
+            $stmt = $pdo->query($query);
+
+            // Affichage des films
+            foreach ($stmt as $row ) {
+                $filmId = $row['id']; // Récupérer l'ID du film
+                $title = $row['title'];
+                $image = $row['image'];
+                $year = $row['year'];
+                $duration = $row['duration'];
+            ?>
+            <div class="col-lg-6">
+                <div class="services-img-wrap">
+                    <a href="film-detail.php?id='<?= $filmId ?>'"><img src="<?= $image ?>" alt="<?= $title ?>" class="movie-image"></a>
+                    <a href="film-detail.php?id=<?= $filmId ?>" class="download-btn" download>Watch <img src="fonts/download.svg" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="services-content-wrap">
+                    <div class="section-title title-style-two mb-20">
+                        <span class="sub-title">Movie</span>
+                        <h2 class="title"><?= $title ?></h2>
+                    </div>
+                    <p><?= $year ?> - <?= $duration ?> min</p>
+                    <div class="services-list">
+                        <ul>
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-television"></i>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consecetur adipiscing elseddo eiusmod tempor.There are many variations of passages of lorem
-                                Ipsum available, but the majority have suffered alteration in some injected humour.</p>
-                                <div class="services-list">
-                                    <ul>
-                                        <li>
-                                            <div class="icon">
-                                                <i class="flaticon-television"></i>
-                                            </div>
-                                            <div class="content">
-                                                <h5>Enjoy on Your TV.</h5>
-                                                <p>Lorem ipsum dolor sit amet, consecetur adipiscing elit, sed do eiusmod tempor.</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="icon">
-                                                <i class="flaticon-video-camera"></i>
-                                            </div>
-                                            <div class="content">
-                                                <h5>Watch Everywhere.</h5>
-                                                <p>Lorem ipsum dolor sit amet, consecetur adipiscing elit, sed do eiusmod tempor.</p>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                <div class="content">
+                                    <h5>Enjoy on Your TV.</h5>
+                                    <p>Lorem ipsum dolor sit amet, consecetur adipiscing elit, sed do eiusmod tempor.</p>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-video-camera"></i>
+                                </div>
+                                <div class="content">
+                                    <h5>Watch Everywhere.</h5>
+                                    <p>Lorem ipsum dolor sit amet, consecetur adipiscing elit, sed do eiusmod tempor.</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </section>
-            
+            </div>
+            <?php
+            }
+            ?>
+        </div>
+    </div>
+</section>
+
 
         <!-- footer-area -->
         <footer>
@@ -183,7 +148,7 @@ require ('PHP/ConnexionBDD.php');
                                     <nav>
                                         <ul class="navigation">
                                             <li><a href="index.html">Home</a></li>
-                                            <li><a href="index.html">Movie</a></li>
+                                            <li><a href="#Movie">Movie</a></li>
                                             <li><a href="index.html">tv show</a></li>
                                             <li><a href="index.html">pages</a></li>
                                             <li><a href="pricing.html">Pricing</a></li>
@@ -230,7 +195,7 @@ require ('PHP/ConnexionBDD.php');
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
                             <div class="copyright-text">
-                                <p>Copyright &copy; 2021. All Rights Reserved By <a href="index.html">Movflx</a></p>
+                                <p>Copyright &copy; 2021. All Rights Reserved By <a href="index.html">PHPVideo</a></p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">

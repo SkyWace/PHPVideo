@@ -1,51 +1,21 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="../../css/bootstrap.min.css">
-        <link rel="stylesheet" href="../../css/animate.min.css">
-        <link rel="stylesheet" href="../../css/magnific-popup.css">
-        <link rel="stylesheet" href="../../css/fontawesome-all.min.css">
-        <link rel="stylesheet" href="../../css/flaticon.css">
-        <link rel="stylesheet" href="../../css/style.css">
-        <link rel="stylesheet" href="../../css/responsive.css">
-        <link rel="stylesheet" href="../../css/styleP.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/animate.min.css">
+    <link rel="stylesheet" href="../../css/magnific-popup.css">
+    <link rel="stylesheet" href="../../css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../../css/flaticon.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/styleP.css">
 </head>
-<?php
-require ('../Css.php');
-require ('../header.php');
-?>
 <body class="Form-Profil">
-    <table> 
-        <tbody>
 <?php
 require_once 'User.php'; // Inclure la classe User
 
 // Instancier la classe User
 $user = new User();
-
-// Vérifier si le formulaire a été soumis pour mettre à jour un utilisateur
-if(isset($_POST['update'])) {
-    $id = $_POST['id'];
-    $prenom = $_POST['prenom'];
-    $email = $_POST['email'];
-    $user->update($id, $prenom, $email);
-    header('Location: User_update.php'); // Rediriger vers la page principale
-    exit; // Terminer le script pour éviter toute exécution supplémentaire
-}
-
-// Vérifier si le formulaire a été soumis pour supprimer un utilisateur
-if(isset($_POST['delete'])) {
-    $id = $_POST['id'];
-    $deletedRows = $user->delete($id);
-    if ($deletedRows > 0) {
-        echo "Utilisateur supprimé avec succès.";
-    } else {
-        echo "Aucun utilisateur trouvé avec cet ID.";
-    }
-    header('Location: User_update.php'); // Rediriger vers la page principale
-    exit; // Terminer le script pour éviter toute exécution supplémentaire
-}
 
 // Récupérer l'ID de l'utilisateur à partir de la requête GET
 $id = $_GET['id'];
@@ -54,6 +24,29 @@ $id = $_GET['id'];
 $userData = $user->read($id);
 
 if ($userData) {
+    // Vérifier si le formulaire a été soumis pour mettre à jour un utilisateur
+    if(isset($_POST['update'])) {
+        $id = $_POST['id'];
+        $prenom = $_POST['prenom'];
+        $email = $_POST['email'];
+        $user->update($id, $prenom, $email);
+        header('Location: User_update.php'); // Rediriger vers la page principale
+        exit; // Terminer le script pour éviter toute exécution supplémentaire
+    }
+
+    // Vérifier si le formulaire a été soumis pour supprimer un utilisateur
+    if(isset($_POST['delete'])) {
+        $id = $_POST['id'];
+        $deletedRows = $user->delete($id);
+        if ($deletedRows > 0) {
+            echo "Utilisateur supprimé avec succès.";
+        } else {
+            echo "Aucun utilisateur trouvé avec cet ID.";
+        }
+        header('Location: User_update.php'); // Rediriger vers la page principale
+        exit; // Terminer le script pour éviter toute exécution supplémentaire
+    }
+
     // Afficher le formulaire d'édition de l'utilisateur
     echo "<h1>Modifier l'utilisateur</h1>";
     echo "<form method='post'>";
@@ -72,10 +65,5 @@ if ($userData) {
     echo "Aucun utilisateur trouvé avec cet ID.";
 }
 ?>
-</tbody>
-    </table>
 </body>
-<?php
-require ('../footer.php');
-?>
 </html>

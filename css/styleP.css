@@ -255,3 +255,15 @@ form p {
     align-items:safe;
     background-color: black;
 }
+
+.movie-image {
+    width: 500px; /* Remplacez la valeur par la taille souhaitée */
+    height: auto;
+    padding : 20px;
+}
+
+.movie-content .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
