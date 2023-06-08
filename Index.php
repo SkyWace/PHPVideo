@@ -89,8 +89,8 @@ require ('PHP/ConnexionBDD.php');
             ?>
             <div class="col-lg-6">
                 <div class="services-img-wrap">
-                    <a href="film-detail.php?id='<?= $filmId ?>'"><img src="<?= $image ?>" alt="<?= $title ?>" class="movie-image"></a>
-                    <a href="film-detail.php?id=<?= $filmId ?>" class="download-btn" download>Watch <img src="fonts/download.svg" alt=""></a>
+                    <a href="film-detail.php"><img src="<?= $image ?>" alt="<?= $title ?>" class="movie-image"></a>
+                    <a href="film-detail.php" class="download-btn" download>Watch <img src="fonts/download.svg" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -100,28 +100,6 @@ require ('PHP/ConnexionBDD.php');
                         <h2 class="title"><?= $title ?></h2>
                     </div>
                     <p><?= $year ?> - <?= $duration ?> min</p>
-                    <div class="services-list">
-                        <ul>
-                            <li>
-                                <div class="icon">
-                                    <i class="flaticon-television"></i>
-                                </div>
-                                <div class="content">
-                                    <h5>Enjoy on Your TV.</h5>
-                                    <p>Lorem ipsum dolor sit amet, consecetur adipiscing elit, sed do eiusmod tempor.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon">
-                                    <i class="flaticon-video-camera"></i>
-                                </div>
-                                <div class="content">
-                                    <h5>Watch Everywhere.</h5>
-                                    <p>Lorem ipsum dolor sit amet, consecetur adipiscing elit, sed do eiusmod tempor.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
             <?php

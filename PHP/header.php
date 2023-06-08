@@ -20,14 +20,8 @@
                                 </div>
                                 <div class="navbar-wrap main-menu d-none d-lg-flex">
                                     <ul class="navigation">
-                                        <li class="active menu-item-has-children"><a href="../../index.php">Home</a>
-                                        </li>
-                                        <li class="menu-item-has-children"><a href="#">Movie</a>
-                                            <ul class="submenu">
-                                                <li><a href="movie.html">Movie</a></li>
-                                                <li><a href="movie-details.php">Movie Details</a></li>
-                                            </ul>
-                                        </li>
+                                        <li class="active menu-item-has-children"><a href="../../index.php">Home</a></li>
+                                        <li class="menu-item-has-children"><a href="../../film-detail.php">Movie</a></li>
                                         <li><a href="contact.html">contacts</a></li>
                                         <?php
                                         // Vérifier si l'utilisateur a le statut admin = 1

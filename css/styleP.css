@@ -267,3 +267,7 @@ form p {
     align-items: center;
     justify-content: space-between;
 }
+
+.movie-detail {
+    background-color: #12151e;
+}
