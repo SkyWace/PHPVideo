@@ -5,7 +5,7 @@ ini_set('display_errors', 'on');
 require_once 'Movie.php';
 
 if(isset($_GET['id']) AND !empty($_GET['id'])) {
-    $getid = htmlspecialchars($_GET['id']);
+    $getid = htmlspecialchars(intval($_GET['id']));
 
     $movie = new Movie ($bdd);
 
@@ -18,14 +18,14 @@ if(isset($_GET['id']) AND !empty($_GET['id'])) {
         $synopsis = $onemovie['synopsis'];
         $pegi = $onemovie['pegi'];    
     } else {
-        die('Ce film n\'existe pas !');
+        echo('Ce film n\'existe pas !'.'<br>');
+        die('<a href="movie.all.php">Retour</a>');
     }
 } else {
     die('Erreur');
 }
 
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -72,7 +72,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])) {
                 <p id="synopsis">Synopsis : <br><?= $synopsis ?></p><br>
                 <p id="link">Lien : <?= $link ?></p><br>
                 <?php if(!empty($image)) {
-                    echo '<img style="max-width:20%" src="img/'.$image.'">';
+                    echo '<img style="max-width:20%" src="images/'.$image.'">';
                 }?><br>
             </div>
             <hr>

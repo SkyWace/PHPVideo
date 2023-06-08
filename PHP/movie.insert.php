@@ -8,15 +8,19 @@
 </head>
 <body>
     <a href="movie.all.php">Retour</a>
-    <form action="insertmovie.controller.php" method="post">
+    <form action="insertmovie.controller.php" method="post" enctype="multipart/form-data">
         <label for="title">Titre</label><br>
         <input type="text" name="title" id="title"><br><br>
         <label for="image">Affiche</label><br>
-        <input type="text" name="image" id="image"><br><br>
-        <label for="link">Titre</label><br>
+        <input type="file" name="image[]" id="image[]"><br><br>
+        <label for="Lien">Titre</label><br>
         <input type="text" name="link" id="link"><br><br>
         <label for="synopsis">Synopsis</label><br>
         <input type="text" name="synopsis" id="synopsis"><br><br>
+        <label for="duration">Durée</label><br>
+        <input type="number" name="duration" id="duration"><br><br>
+        <label for="releaseyear">Année de sortie</label><br>
+        <input type="number" name="releaseyear" id="releaseyear"><br><br>
         <label for="pegi">PEGI</label><br>
         <input type="number" name="pegi" id="pegi"><br><br>
         <input type="submit" value="Ajouter ce film">
