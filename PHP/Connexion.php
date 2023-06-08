@@ -8,14 +8,14 @@
 </head>
 <header class="FormConnexion">
     <?php
-    require ("header.php");
-    require ("Css.php");
+    require ("../header.php");
+    require ("../Css.php");
     ?>
   </header>
 <body>
     <main>
     <section class="banner-area-SignIn banner-bg-SignIn">
-    <form class="Form" action="Login.php" d="login-form" method="post">
+    <form class="Form" action="FormConnexion.php" d="login-form" method="post">
       <label for="email">Email : </label>
       <input type="email" id="email" name="email" required>
       <label for="password">Mot de passe :</label>
@@ -29,7 +29,7 @@
   </main>
   <footer>
     <?php
-    require ("footer.php"); 
+    require ("../footer.php"); 
     ?>
   </footer>
 </body>

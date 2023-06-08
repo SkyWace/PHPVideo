@@ -12,8 +12,8 @@
                                 <div class="footer-menu">
                                     <nav>
                                         <ul class="navigation">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="Contact.html">Contact</a></li>
+                                            <li><a href="../..index.php">Home</a></li>
+                                            <li><a href="../../contact.php">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -39,7 +39,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
                             <div class="copyright-text">
-                                <p>Copyright &copy; 2023. All Rights Reserved By <a href="index.html">PHPVideo</a></p>
+                                <p>Copyright &copy; 2023. All Rights Reserved By <a href="../..index.php">PHPVideo</a></p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">

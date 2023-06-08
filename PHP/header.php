@@ -22,7 +22,7 @@
                                     <ul class="navigation">
                                         <li class="active menu-item-has-children"><a href="../../index.php">Home</a></li>
                                         <li class="menu-item-has-children"><a href="../../film-detail.php">Movie</a></li>
-                                        <li><a href="contact.html">contacts</a></li>
+                                        <li><a href="../../contact.php">contacts</a></li>
                                         <?php
                                         // Vérifier si l'utilisateur a le statut admin = 1
                                         // Récupérer les informations de l'utilisateur depuis la base de données
