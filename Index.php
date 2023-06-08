@@ -45,7 +45,7 @@ require ('PHP/ConnexionBDD.php');
                         <div class="col-xl-6 col-lg-8">
                             <div class="banner-content">
                                 <h6 class="sub-title wow fadeInUp" data-wow-delay=".2s" data-wow-duration="1.8s">Movflx</h6>
-                                <h2 class="title wow fadeInUp" data-wow-delay=".4s" data-wow-duration="1.8s">Films <span>illimités</span>,Emisions TV & Ultra x.</h2>
+                                <h2 class="title wow fadeInUp" data-wow-delay=".4s" data-wow-duration="1.8s">Films <span>illimités</span>,Emisions TV & 4K 8d.</h2>
                                 <div class="banner-meta wow fadeInUp" data-wow-delay=".6s" data-wow-duration="1s">
                                     <ul>
                                         <li class="quality">
