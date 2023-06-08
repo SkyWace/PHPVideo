@@ -1,9 +1,24 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../css/animate.min.css">
+        <link rel="stylesheet" href="../../css/magnific-popup.css">
+        <link rel="stylesheet" href="../../css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="../../css/flaticon.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/responsive.css">
+        <link rel="stylesheet" href="../../css/styleP.css">
+</head>
 <?php
 require ('../Css.php');
 require ('../header.php');
 require_once ('User.php'); // Inclure la classe User
-
+?>
+<body class="Form-Profil">
+    <table> 
+        <tbody>
+<?php
 // Instancier la classe User
 $user = new User();
 
@@ -33,3 +48,7 @@ foreach($users as $user) {
 }
 echo "</table>";
 ?>
+</tbody>
+    </table>
+</body>
+</html>
