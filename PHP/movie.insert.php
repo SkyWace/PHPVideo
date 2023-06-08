@@ -1,3 +1,15 @@
+<?php
+
+ini_set('display_errors', 'on');
+
+require_once 'bdd.php';
+
+$select = $bdd->prepare("SELECT * FROM gender");
+$select->execute();
+$genders = $select->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +25,7 @@
         <input type="text" name="title" id="title"><br><br>
         <label for="image">Affiche</label><br>
         <input type="file" name="image[]" id="image[]"><br><br>
-        <label for="Lien">Titre</label><br>
+        <label for="Lien">Lien</label><br>
         <input type="text" name="link" id="link"><br><br>
         <label for="synopsis">Synopsis</label><br>
         <input type="text" name="synopsis" id="synopsis"><br><br>

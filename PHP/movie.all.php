@@ -44,7 +44,8 @@ $movies = $query->fetchAll();
     <tr>
         <th id="tone" colspan =1>Détails</th>
         <th id="ttitle" colspan=1>Titre</th>
-        <th id="tlink" colspan=1>Lien visionnage</th>
+        <th id="timage" colspan=1>Affiche</th>
+        <th id="tlink" colspan=1>Lien lecteur</th>
         <th id="tcontenu" colspan=1>Contenu</th>
         <th id="treleaseyear" colspan=1>Année de sortie</th>
         <th id="tduration" colspan=1>Durée</th>
@@ -57,6 +58,7 @@ $movies = $query->fetchAll();
             echo '<tr>';
             echo '<td><a href="movie.one.php?id='.$key['id'].'">►</a></td>';
             echo '<td id="title">'.$key ['title'].'</td>';
+            echo '<td id="title"><img style="max-width:25%" src="images/'.$key['image'].'"></td>';
             echo '<td id="link">'.substr($key ['link'], 0, 30). '</td>';
             echo '<td id="synopsis">'.substr($key ['synopsis'], 0, 80).'...'. '</td>';
             echo '<td id="duration">'.$key ['duration']. '</td>';

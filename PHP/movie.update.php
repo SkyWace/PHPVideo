@@ -43,6 +43,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])) {
 <body>
     <a href="movie.all.php">Retour</a>
     <form action="updatemovie.controller.php?id=<?= $_GET['id'] ?>" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
         <label for="title">Titre</label><br>
         <input type="text" name="title" value="<?= $title ?>" id="title"><br><br>
         <label for="image">Affiche</label><br>

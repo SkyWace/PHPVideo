@@ -33,14 +33,18 @@ class Movie {
         $releaseyear = $_POST['releaseyear'];
         $duration = $_POST['duration'];
         $pegi = $_POST['pegi'];
+
+        $bdd = new PDO('mysql:host=localhost:8889;dbname=phpvideo','root','root'); 
         
-        $output_dir = "images/"; //"chemin pour enregistrer img"
+        $output_dir = "/images"; //"chemin pour enregistrer img"
         $imgName = $_FILES['image']['name'][0];
         $imgType = $_FILES['image']['type'][0];
         
         if (!file_exists($output_dir)) {
             @mkdir($output_dir, 0777);
         }
+
+        move_uploaded_file( $_FILES["image"]["tmp_name"][0], $output_dir."/".$ImageName );
         
         if(isset($title, $image, $link, $releaseyear, $duration, $synopsis, $pegi)) {
             $query1 = $bdd->prepare("INSERT INTO movies (title, image, link) VALUES ('$title', '$imgName', '$link')");
@@ -53,10 +57,8 @@ class Movie {
         }
     }
 
-    
-
     public function update($id) {
-        $id=$_GET['id'];
+        $id=$_POST['id'];
         $title = $_POST['title'];
         $image = $_FILES['image'];
         $link = $_POST['link'];

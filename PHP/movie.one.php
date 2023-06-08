@@ -61,7 +61,6 @@ if(isset($_GET['id']) AND !empty($_GET['id'])) {
     <body>
         <main>
             <div class="movie">
-                <p id="title"><?= $title ?></p><br><br>
                 <div id="buttons">
                     <button id='modif' onclick="window.location.href = 'movie.update.php?id=<?php print_r($id_movie) ?>'">MODIFIER</button>
                     <button id='suppr' onclick="window.location.href = 'movie.delete.php?id=<?php print_r($id_movie) ?>'">SUPPRIMER</button>
