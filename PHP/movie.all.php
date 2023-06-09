@@ -1,4 +1,7 @@
 <?php
+require ('Css.php');
+?>
+<?php
 
 ini_set('display_errors', 'on');
 
