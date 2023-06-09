@@ -8,8 +8,8 @@
 </head>
 <header class="FormConnexion">
     <?php
-    require ("../header.php");
-    require ("../Css.php");
+    require ("header.php");
+    require ("Css.php");
     ?>
   </header>
 <body>
@@ -29,7 +29,7 @@
   </main>
   <footer>
     <?php
-    require ("../footer.php"); 
+    require ("footer.php"); 
     ?>
   </footer>
 </body>
